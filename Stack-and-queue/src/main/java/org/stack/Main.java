@@ -5,29 +5,29 @@ public class Main {
         int[] sequence = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30};
         int l = 2;
 
-        Stack stack = new Stack();
+        StackImpl stack = new StackImpl();
         stack.selectMultiples(sequence, l);
         stack.printStack();
         stack = flipStack(stack);
         stack.printStack();
     }
 
-    private static Stack flipStack(Stack stack){
-        Stack flippedStack = new Stack();
-        while (stack.getTop() != null) {
-            flippedStack.push(stack.getDataFromStack());
-            stack.pop();
+    private static StackImpl flipStack(StackImpl stackImpl){
+        StackImpl flippedStackImpl = new StackImpl();
+        while (stackImpl.getTop() != null) {
+            flippedStackImpl.push(stackImpl.getDataFromStack());
+            stackImpl.pop();
         }
-        return flippedStack;
+        return flippedStackImpl;
     }
-    private static Stack flipStackByRecursion(Stack stack, int n){
-        int temp = stack.getDataFromStack();
-        stack.pop();
-        stack.push(temp);
-        return flipStackByRecursion(stack, n - 1);
+    private static StackImpl flipStackByRecursion(StackImpl stackImpl, int n){
+        int temp = stackImpl.getDataFromStack();
+        stackImpl.pop();
+        stackImpl.push(temp);
+        return flipStackByRecursion(stackImpl, n - 1);
     }
 
-    private static Stack removeFromStackByIndex(){
+    private static StackImpl removeFromStackByIndex(){
         return null;
     }
 }
