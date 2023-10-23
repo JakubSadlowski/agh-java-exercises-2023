@@ -76,35 +76,32 @@ public class CustomLinkedList {
      * pierwsza, dołącz pozostałe elementy listy drugiej na koniec listy pierwszej. Zdefiniuj wszystkie
      * użyte struktury danych, operacje i zmienne
      *
-     * @param list 5->  3->1
-     *             6->  4->2
-     *             5->6->3->4->1->2
+     * @param list
      */
     public void merge(CustomLinkedList list2) {
         Node node1 = this.tail, node2 = list2.tail;
-        Node node2Next = null;
+
         while (node1 != null && node2 != null) {
             Node node1Next = node1.next;
-            node2Next = node2.next;
+            Node node2Next = node2.next;
             node1.next = node2;
             node2.next = node1Next;
-            if (node1Next != null) {
+
+            if (node1Next != null && node2Next != null) {
                 node1 = node1Next;
+                node2 = node2Next;
+            } else if (node1Next != null && node2Next == null) {
+                break;
             } else {
                 node1 = node1.next;
+                while (node2Next != null) {
+                    node1.next = node2Next;
+                    node1 = node1.next;
+                    node2Next = node2Next.next;
+                }
                 break;
             }
-            if (node2Next != null) {
-                node2 = node2Next;
-            }
         }
-
-        while (node2Next != null) {
-            node1.next = node2Next;
-            node1 = node1.next;
-            node2Next = node2Next.next;
-        }
-
         list2.clear();
     }
 
