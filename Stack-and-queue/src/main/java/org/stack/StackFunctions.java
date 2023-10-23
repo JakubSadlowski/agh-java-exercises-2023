@@ -18,7 +18,6 @@ public class StackFunctions {
         for (int n : sequenceOfNumbers) {
             if (n % l == 0) {
                 stack.push(n);
-                System.out.print(n + ", ");
             }
         }
         return stack;
@@ -34,7 +33,7 @@ public class StackFunctions {
     public static Stack<Integer> reverseStackMethodA(Stack<Integer> stack) {
         Stack<Integer> result = new PointerStack();
         while (!stack.empty()) {
-            System.out.print(result.push(stack.pop()) + ", ");
+            result.push(stack.pop());
         }
         return result;
     }

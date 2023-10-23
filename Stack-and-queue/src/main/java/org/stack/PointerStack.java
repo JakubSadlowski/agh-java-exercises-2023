@@ -1,6 +1,7 @@
 package org.stack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PointerStack implements Stack<Integer> {
@@ -77,8 +78,8 @@ public class PointerStack implements Stack<Integer> {
     }
 
     @Override
-    public void print(){
-        
+    public String toString() {
+        return Arrays.toString(getElements().toArray());
     }
 
     class Node {

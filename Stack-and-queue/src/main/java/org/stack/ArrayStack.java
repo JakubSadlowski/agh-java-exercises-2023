@@ -68,13 +68,6 @@ public class ArrayStack implements Stack<Integer> {
         return result;
     }
 
-    @Override
-    public void print(){
-        for(Integer element: array){
-            System.out.print(element + ", ");
-        }
-    }
-
     public Integer remove(int index) {
         if (index < 0 || index >= array.length) {
             throw new IllegalArgumentException("Method argument index=" + index + " is invalid because it exceeds stack boundaries.");
@@ -89,5 +82,10 @@ public class ArrayStack implements Stack<Integer> {
 
     private boolean isMaxStackCapacityReached() {
         return index >= array.length - 1;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(getElements().toArray());
     }
 }

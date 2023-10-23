@@ -16,6 +16,4 @@ public interface Stack<E> {
     List<E> getElements();
 
     Stack<E> reverse();
-
-    void print();
 }
