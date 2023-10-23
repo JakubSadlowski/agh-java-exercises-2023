@@ -66,12 +66,17 @@ public class StackFunctions {
      * Napisz funkcję UsuńX, która z kolejki prostej usunie element o wartości x, jeśli taki element w
      * kolejce się znajduje. Dla kolejki przyjmij implementację tablicową. Zdefiniuj wszystkie użyte
      * funkcje i struktury danych oraz zmienne.
+     *
      * @param queue
      * @param elementIndex
      * @return
      */
-    public static Queue removeElementFromQueue(Queue queue, int elementIndex){
-        queue.deleteElement(elementIndex);
-        return queue;
+    public static boolean removeElementFromQueue(Queue queue, int value) {
+        int index = queue.indexOf(value);
+        if (index != -1) {
+            queue.remove(index);
+            return true;
+        }
+        return false;
     }
 }

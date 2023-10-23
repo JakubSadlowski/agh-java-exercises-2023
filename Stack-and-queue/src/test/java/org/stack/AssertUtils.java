@@ -2,13 +2,13 @@ package org.stack;
 
 import org.junit.jupiter.api.Assertions;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class AssertUtils {
     public static void assertListsEqual(List<Integer> list1, List<Integer> list2) {
-        Assertions.assertEquals(list1.size(), list2.size(), "Lists are of different size");
-        for (int i = 0; i < list1.size(); i++) {
-            Assertions.assertEquals(list1.get(i), list2.get(i), "List elements at index i=" + i + " are different");
-        }
+        String list1ToString = Arrays.toString(list1.toArray());
+        String list2ToString = Arrays.toString(list2.toArray());
+        Assertions.assertEquals(list1ToString, list2ToString, "Lists are different");
     }
 }

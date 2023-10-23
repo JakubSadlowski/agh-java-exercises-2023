@@ -12,14 +12,11 @@ public class CustomList {
 
     public void add(Integer value) {
         if (empty()) {
-            firstNode = new Node();
-            lastNode = firstNode;
-            firstNode.value = value;
-            return;
+            lastNode = firstNode = new Node(value);
+        } else {
+            lastNode.next = new Node(value);
+            lastNode = lastNode.next;
         }
-        lastNode.next = new Node();
-        lastNode = lastNode.next;
-        lastNode.value = value;
         count++;
     }
 
@@ -51,7 +48,8 @@ public class CustomList {
     private int getSize() {
         return count;
     }
-// a->c->b
+
+    // a->c->b
 // c->d
     public void merge(CustomList list) {
         int inputListSize = list.getSize();
@@ -75,6 +73,10 @@ public class CustomList {
     public static class Node {
         Node next;
         Integer value;
+
+        Node(Integer value) {
+            this.value = value;
+        }
     }
 
 }

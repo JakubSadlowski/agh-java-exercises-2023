@@ -1,40 +1,110 @@
 package org.stack;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.stack.AssertUtils.assertListsEqual;
 
 class QueueTest {
-    @Test
-    void addingSeveralElementsToQueue(){
-        //Given
-        Queue queue = new Queue(3);
 
-        //When
-        queue.insert(1);
-        queue.insert(2);
-        queue.insert(3);
-
-        //Then
-        assertListsEqual(queue.getElements(), List.of(1, 2, 3));
+    private static Queue createQueue(int size) {
+        return new Queue2(size);
     }
 
     @Test
-    void removingElementFromQueue(){
+    void addingSeveralElementsToQueue() {
         //Given
-        Queue queue = new Queue(3);
+        Queue queue = createQueue(3);
 
         //When
-        queue.insert(1);
-        queue.insert(2);
-        queue.insert(3);
-        queue.deleteElement(2);
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
 
         //Then
-        assertListsEqual(queue.getElements(), List.of(1, 2));
+        assertListsEqual(List.of(3, 2, 1), queue.getElements());
+    }
+
+
+    @Test
+    void removingElementInTheMiddleOfQueue() {
+        //Given
+        Queue queue = createQueue(3);
+
+        //When
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+
+        int index = queue.indexOf(2);
+        if (index != -1) {
+            queue.remove(index);
+        }
+
+
+        //Then
+        assertListsEqual(List.of(3, 1), queue.getElements());
+    }
+
+    @Test
+    void removingElementInsideOfQueue() {
+        //Given
+        Queue queue = createQueue(5);
+
+        //When
+        queue.add(1);
+        queue.add(2);
+        queue.add(5);
+        queue.add(8);
+        queue.add(3);
+
+        int index = queue.indexOf(8);
+        if (index != -1) {
+            queue.remove(index);
+        }
+
+        //Then
+        assertListsEqual(List.of(3, 5, 2, 1), queue.getElements());
+    }
+
+    @Test
+    void removingFirstElementFromQueue() {
+        //Given
+        Queue queue = createQueue(3);
+
+        //When
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+
+        int index = queue.indexOf(1);
+        if (index != -1) {
+            queue.remove(index);
+        }
+
+
+        //Then
+        assertListsEqual(List.of(3, 2), queue.getElements());
+    }
+
+    @Test
+    void removingLastElementFromQueue() {
+        //Given
+        Queue queue = createQueue(3);
+
+        //When
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+
+        int index = queue.indexOf(3);
+        if (index != -1) {
+            queue.remove(index);
+        }
+
+
+        //Then
+        assertListsEqual(List.of(2, 1), queue.getElements());
     }
 }
