@@ -76,6 +76,11 @@ public class PointerStack implements Stack<Integer> {
         return result;
     }
 
+    @Override
+    public void print(){
+        
+    }
+
     class Node {
         int data;
         Node next;
