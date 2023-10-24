@@ -69,15 +69,6 @@ public class CustomLinkedList {
         tail = head = null;
     }
 
-    /**
-     * Połącz dwie listy (implementacja wskaźnikowa) w następujący sposób: el_listy1, el_listy2,
-     * el_listy1, el_listy2, itd. Wynik połączenia powinien znajdować się w liście pierwszej. Lista
-     * druga po zakończeniu łączenia powinna być pusta. Jeśli druga lista okaże się dłuższa niż
-     * pierwsza, dołącz pozostałe elementy listy drugiej na koniec listy pierwszej. Zdefiniuj wszystkie
-     * użyte struktury danych, operacje i zmienne
-     *
-     * @param list
-     */
     public void merge(CustomLinkedList list2) {
         Node node1 = this.tail, node2 = list2.tail;
 

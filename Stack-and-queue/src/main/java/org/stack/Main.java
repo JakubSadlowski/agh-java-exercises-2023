@@ -8,6 +8,27 @@ public class Main {
         exercise002A();
         exercise002B();
         exercise003();
+        exercise004();
+        exercise005();
+    }
+
+    private static void exercise005() {
+        System.out.println("\n\nExercise 005: queue = {5, 7, 1}, value = 7");
+        Queue queue = new Queue2(3);
+        queue.add(1);
+        queue.add(7);
+        queue.add(5);
+        StackFunctions.removeElementFromQueue(queue, 7);
+        System.out.print(String.format("Result: %s", queue));
+    }
+    private static void exercise004() {
+        System.out.println("\n\nExercise 004: list1 = {5, 3, 1}, list2 = {6, 4, 2}");
+        CustomLinkedList list1 = new CustomLinkedList();
+        list1.add(5).add(3).add(1);
+        CustomLinkedList list2 = new CustomLinkedList();
+        list2.add(6).add(4).add(2);
+        StackFunctions.mergeTwoLists(list1, list2);
+        System.out.print(String.format("Result: %s", list1));
     }
 
     private static void exercise003() {

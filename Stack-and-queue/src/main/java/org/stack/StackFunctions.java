@@ -63,12 +63,25 @@ public class StackFunctions {
     }
 
     /**
+     * Połącz dwie listy (implementacja wskaźnikowa) w następujący sposób: el_listy1, el_listy2,
+     * el_listy1, el_listy2, itd. Wynik połączenia powinien znajdować się w liście pierwszej. Lista
+     * druga po zakończeniu łączenia powinna być pusta. Jeśli druga lista okaże się dłuższa niż
+     * pierwsza, dołącz pozostałe elementy listy drugiej na koniec listy pierwszej. Zdefiniuj wszystkie
+     * użyte struktury danych, operacje i zmienne
+     * @param list1
+     * @param list2
+     */
+    public static void mergeTwoLists(CustomLinkedList list1, CustomLinkedList list2){
+        list1.merge(list2);
+    }
+
+    /**
      * Napisz funkcję UsuńX, która z kolejki prostej usunie element o wartości x, jeśli taki element w
      * kolejce się znajduje. Dla kolejki przyjmij implementację tablicową. Zdefiniuj wszystkie użyte
      * funkcje i struktury danych oraz zmienne.
      *
      * @param queue
-     * @param elementIndex
+     * @param value
      * @return
      */
     public static boolean removeElementFromQueue(Queue queue, int value) {
