@@ -17,6 +17,4 @@ public interface Queue {
     int remove(int index);
 
     List<Integer> getElements();
-
-
 }
