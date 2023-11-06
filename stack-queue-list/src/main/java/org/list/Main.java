@@ -8,7 +8,7 @@ public class Main {
         SolutionFunctions.sumNumbersInListAndAddAverage(list);
         Stack stack = SolutionFunctions.addToStack(list);
         SolutionFunctions.removeMaxElementFromStack(stack);
-
+        SolutionFunctions.addToQueueAndSort(stack);
     }
 
 }

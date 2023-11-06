@@ -32,6 +32,10 @@ public class PairOfNumbers {
         this.secondNumber = secondNumber;
     }
 
+    public double sumPair(){
+        return firstNumber + secondNumber;
+    }
+
     private double randomNumberGenerator(){
         Random r = new Random();
         double low = -100;

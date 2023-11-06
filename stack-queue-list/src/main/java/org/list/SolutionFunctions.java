@@ -63,4 +63,21 @@ public class SolutionFunctions {
         stack.remove(stack.getIndex(maxPair));
         return stack;
     }
+
+    /**
+     * Tak zmodyfikowany stos przenieś do kolejki. Stosując kolejkę napisz funkcję, która policzy
+     * sumę wszystkich par liczb i ułoży je w kolejności rosnącej.
+     */
+
+    public static Queue addToQueueAndSort(Stack stack){
+        Queue queue = new Queue(10);
+        for(int i = 0; i < 10; i++){
+            queue.add(stack.pop());
+        }
+        queue.sum();
+        queue.sort();
+        queue.printQueue();
+        return queue;
+    }
+
 }
