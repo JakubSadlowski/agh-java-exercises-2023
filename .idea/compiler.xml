@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Stack-and-queue" />
         <module name="stack-queue-list" />
+        <module name="exam" />
       </profile>
     </annotationProcessing>
   </component>
