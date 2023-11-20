@@ -9,8 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Stack-and-queue" />
         <module name="stack-queue-list" />
-        <module name="exam" />
+        <module name="bst-Tree" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="exam" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

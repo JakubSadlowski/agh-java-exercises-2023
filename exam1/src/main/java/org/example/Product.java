@@ -1,4 +1,4 @@
-package org.example;
+package org.bst;
 
 public class Product {
     private String name;
