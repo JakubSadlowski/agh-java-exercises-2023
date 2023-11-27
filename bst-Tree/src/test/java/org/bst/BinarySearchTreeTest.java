@@ -6,6 +6,14 @@ class BinarySearchTreeTest {
 
     @Test
     void insert() {
+        //Given
+        BinarySearchTree binaryTree = new BinarySearchTree();
+
+        //When
+        binaryTree.insert(20);
+
+        //Then
+
     }
 
     @Test
