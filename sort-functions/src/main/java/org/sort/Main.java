@@ -16,9 +16,9 @@ public class Main {
         printOperationsCountersForSorts(array2);
         measureSortingTime(array2);
 
-        //Size 100000
-        System.out.println("\nArray of size 100000\n");
-        int[] array3 = generateRandomArray(100000, 1, 100000);
+        //Size 10000
+        System.out.println("\nArray of size 10000\n");
+        int[] array3 = generateRandomArray(10000, 10, 10000);
         printOperationsCountersForSorts(array3);
         measureSortingTime(array3);
     }
