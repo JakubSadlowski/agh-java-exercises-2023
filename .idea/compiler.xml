@@ -12,6 +12,7 @@
         <module name="Stack-and-queue" />
         <module name="stack-queue-list" />
         <module name="bst-airport" />
+        <module name="labirynths" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
