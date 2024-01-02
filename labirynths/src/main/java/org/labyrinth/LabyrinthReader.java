@@ -5,9 +5,11 @@ import java.nio.charset.StandardCharsets;
 
 public class LabyrinthReader {
 
-    public static int rowsCounter = 0;
-    public static int columnsCounter = 0;
-    static String[][] readFile(File file) {
+    private int rowsCounter = 0;
+
+    private int columnsCounter = 0;
+
+    public String[][] readFile(File file) {
         int numberOfRows = getNumberOfRows(file);
         int numberOfColumns = getNumberOfColumns(file);
         String[][] labyrinth = new String[numberOfRows][numberOfColumns];
@@ -29,7 +31,15 @@ public class LabyrinthReader {
         return labyrinth;
     }
 
-    private static int getNumberOfRows(File file) {
+    public int getRowsCounter() {
+        return rowsCounter;
+    }
+
+    public int getColumnsCounter() {
+        return columnsCounter;
+    }
+
+    private int getNumberOfRows(File file) {
         try (BufferedReader in = new BufferedReader(
                 new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
             while (in.readLine() != null) {
@@ -42,7 +52,7 @@ public class LabyrinthReader {
         return rowsCounter;
     }
 
-    private static int getNumberOfColumns(File file) {
+    private int getNumberOfColumns(File file) {
         try (BufferedReader in = new BufferedReader(
                 new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
 

@@ -26,9 +26,10 @@ public class LabyrinthBruteForceSolution {
     private int currentPositionY = 0;
 
     public LabyrinthBruteForceSolution(File file){
-        labyrinth = LabyrinthReader.readFile(file);
-        numberOfRows = LabyrinthReader.rowsCounter;
-        numberOfColumns = LabyrinthReader.columnsCounter;
+        LabyrinthReader reader = new LabyrinthReader();
+        labyrinth = reader.readFile(file);
+        numberOfRows = reader.getRowsCounter();
+        numberOfColumns = reader.getColumnsCounter();
     }
 
     public void printLabyrinth(){
@@ -77,25 +78,31 @@ public class LabyrinthBruteForceSolution {
         }
     }
 
-    public void solveLabyrinth(){
+    public int solveLabyrinth(){
+        int steps = 0;
         while (!labyrinth[numberOfRows - 1][numberOfColumns - 1].equals(PATH)){
             Random random = new Random();
             int direction = random.nextInt(4);
             switch(direction){
                 case 0:
                     moveRight();
+                    steps++;
                     break;
                 case 1:
                     moveDown();
+                    steps++;
                     break;
                 case 2:
                     moveLeft();
+                    steps++;
                     break;
                 case 3:
                     moveUp();
+                    steps++;
                     break;
             }
         }
         printLabyrinth();
+        return steps;
     }
 }
