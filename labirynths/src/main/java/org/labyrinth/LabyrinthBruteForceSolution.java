@@ -15,12 +15,6 @@ public class LabyrinthBruteForceSolution {
 
     private final String WALL = "#";
 
-    private final String EMPTY = " ";
-
-    //private int endPositionX = numberOfRows - 1;
-
-    //private int endPositionY = numberOfColumns - 1;
-
     private int currentPositionX = 0;
 
     private int currentPositionY = 0;
